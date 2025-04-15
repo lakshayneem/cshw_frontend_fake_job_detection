@@ -35,7 +35,7 @@ export default function Login() {
     const handleLogin = async () => {
         try {
             setError(null);
-            const response = await axios.post("http://localhost:8080/api/login", { mail, password });
+            const response = await axios.post("https://cshw-backend-fake-job-detection.onrender.com/api/login", { mail, password });
 
             if (response.data.token) {
                 localStorage.setItem("authToken", response.data.token);
@@ -50,7 +50,7 @@ export default function Login() {
     const handleGoogleLogin = async (response) => {
         try {
             const { credential } = response;
-            await axios.post("http://localhost:8080/api/google-login", { token: credential });
+            await axios.post("https://cshw-backend-fake-job-detection.onrender.com/api/google-login", { token: credential });
 
             localStorage.setItem("authToken", credential);
             navigate("/home");
