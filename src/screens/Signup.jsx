@@ -32,7 +32,7 @@ export default function Signup() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8080/api/signup", { name, mail, password });
+      const response = await axios.post("https://cshw-backend-fake-job-detection.onrender.com/api/signup", { name, mail, password });
 
       if (response.data.message === "User registered successfully") {
         alert("Signup successful!");
