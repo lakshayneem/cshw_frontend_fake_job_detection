@@ -20,7 +20,7 @@ export default function PreAuth() {
 
   const analyzeReview = async (text) => {
     try {
-      const response = await axios.post("http://127.0.0.1:5000/api/analyze", { review: text });
+      const response = await axios.post("https://cshw-machine-learning.onrender.com/api/analyze", { review: text });
       return response.data;
     } catch (error) {
       console.error("Error analyzing review:", error);
